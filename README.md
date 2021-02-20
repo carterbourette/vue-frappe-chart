@@ -5,7 +5,7 @@
         <img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo" />
     </a>
     <a href="https://frappe.github.io/charts" target="_blank" rel="noopener noreferrer">
-        <img src="https://raw.githubusercontent.com/frappe/design/master/logos/logo-2019/frappe-charts-logo.png" width="200" />
+        <img src="https://raw.githubusercontent.com/frappe/design/master/logos/logo-2019/frappe-charts-logo.png" width="100" />
     </a>
 </p>
 
