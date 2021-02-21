@@ -9,7 +9,16 @@
     </a>
 </p>
 
-This is a simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
+A simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
+
+<v-frappe-chart
+    type="bar"
+    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+    :data="[
+        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
+    ]"
+    :colors="['red']"
+/>
 
 ## Getting Started
 

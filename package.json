@@ -9,5 +9,13 @@
   "private": false,
   "dependencies": {
     "frappe-charts": "1.5.6"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-demo-container": "^0.2.0"
+  },
+  "scripts": {
+    "docs:serve": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   }
 }
