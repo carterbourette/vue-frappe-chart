@@ -8,7 +8,7 @@ import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
 export default {
   props: {
     type: String,
-    data: Object,
+    data: [Array, Object],
     height: {
       type: Number,
       default: 250
@@ -57,9 +57,7 @@ export default {
     }
   },
   mounted () {
-    this.parse()
-
-    this.init()
+    this.parse(); this.init()
   },
   unmounted () {
     this.destroy()
@@ -105,7 +103,7 @@ export default {
       this.$emit('data-select', { 
         index: e.index,
         label: e.label,
-        value: e.values[0],
+        value: (e.values.length === 1) ? e.values[0] : e.values,
         event: e
       })
     }

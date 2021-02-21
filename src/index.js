@@ -1,11 +1,11 @@
-import { Chart } from './components/Charts'
+import { Chart } from './components'
 
 export {
   Chart as VFrappeChart
 }
 
 export default {
-    install (Vue) {
-        Vue.component('v-frappe-chart', Chart)
-    }
+  install (Vue) {
+    Vue.component('v-frappe-chart', Chart)
+  }
 }
