@@ -9,6 +9,8 @@
     </a>
 </p>
 
+[![npm version](https://badge.fury.io/js/vue-frappe-chart.svg)](https://badge.fury.io/js/vue-frappe-chart)
+
 This is a simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
 
 ## Getting Started
@@ -54,5 +56,6 @@ In our template:
 ```
 
 ## Resources
+* [NPM vue-frappe-chart](https://www.npmjs.com/package/vue-frappe-chart)
 * [Frappe Charts](https://frappe.io/charts)
 * [Vuejs](https://vuejs.org)

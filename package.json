@@ -3,6 +3,7 @@
   "version": "0.1.5",
   "description": "A simple Vue wrapper for Frappe Charts.",
   "main": "src/index.js",
+  "homepage": "https://carterbourette.ca/vue-frappe-chart",
   "repository": "https://github.com/carterbourette/vue-frappe-chart",
   "author": "Carter Bourette <cbourette@gmail.com>",
   "license": "MIT",
