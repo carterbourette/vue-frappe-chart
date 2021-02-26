@@ -1,6 +1,6 @@
 {
   "name": "vue-frappe-chart",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple Vue wrapper for Frappe Charts.",
   "main": "src/index.js",
   "homepage": "https://carterbourette.ca/vue-frappe-chart",
