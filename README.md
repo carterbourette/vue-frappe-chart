@@ -37,7 +37,7 @@ import { VFrappeChart } from 'vue-frappe-chart'
 
 export default {
   components: {
-    VFrappeChart,
+    VFrappeChart
   }
 }
 ```
@@ -57,5 +57,6 @@ In our template:
 
 ## Resources
 * [NPM vue-frappe-chart](https://www.npmjs.com/package/vue-frappe-chart)
+* [vue-frappe-chart Documentation](https://carterbourette.ca/vue-frappe-chart/)
 * [Frappe Charts](https://frappe.io/charts)
 * [Vuejs](https://vuejs.org)

@@ -90,8 +90,8 @@ For a non-web or static interface, where tooltips are absent, `valuesOverPoints`
 ::: demo 
 ```vue
 <v-frappe-chart
+    valuesOverPoints
     type="line"
-    :valuesOverPoints="1"
     :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
     :data="[
         { values: [18, 40, 30, 35, 8, 52, 17, -4] }

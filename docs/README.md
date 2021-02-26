@@ -9,16 +9,9 @@
     </a>
 </p>
 
-A simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
+[![npm version](https://badge.fury.io/js/vue-frappe-chart.svg)](https://badge.fury.io/js/vue-frappe-chart)
 
-<v-frappe-chart
-    type="bar"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :colors="['red']"
-/>
+This is a simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
 
 ## Getting Started
 
@@ -44,7 +37,7 @@ import { VFrappeChart } from 'vue-frappe-chart'
 
 export default {
   components: {
-    VFrappeChart,
+    VFrappeChart
   }
 }
 ```
@@ -63,5 +56,7 @@ In our template:
 ```
 
 ## Resources
+* [NPM vue-frappe-chart](https://www.npmjs.com/package/vue-frappe-chart)
+* [vue-frappe-chart Documentation](https://carterbourette.ca/vue-frappe-chart/)
 * [Frappe Charts](https://frappe.io/charts)
 * [Vuejs](https://vuejs.org)
