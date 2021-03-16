@@ -62,6 +62,9 @@ export default {
   unmounted () {
     this.destroy()
   },
+  beforeDestroy () {
+    this.destroy()
+  },
   methods: {
     init () {
       if (this.chart)
