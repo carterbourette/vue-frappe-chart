@@ -58,7 +58,7 @@ Frappe Charts are responsive, as they rerender all the data in the current avail
 In order to set the bar width, instead of defining it and the space between the bars independently, we simply define the **ratio of the space** between bars to the bar width. The chart then adjusts the actual size proportional to the chart container.
 
 ```vue
-:barOptions="{ spaceRatio: 0.2 // default: 1 }"
+:bar-options="{ spaceRatio: 0.2 // default: 1 }"
 ```
 
 Try resizing the window to see the effect, with different ratio values.
@@ -71,7 +71,7 @@ Try resizing the window to see the effect, with different ratio values.
     type="bar"
     :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
     :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
-    :barOptions="{
+    :bar-options="{
       spaceRatio: ratio, // default: 1
     }"
   />
@@ -94,10 +94,16 @@ export default {
 
 ## More Tweaks
 
+Axis lines define a chart presentation. By default they are long spanning lines, but to give prominence to data points, X and/or Y axes can also be short ticks:
+
+```vue
+:axis-options: { xAxisMode: 'tick' // default: 'span' },
+```
+
 Just like bar width, we can set the dot size on a line graph, with the dotSize property in lineOptions.
 
 ```vue
-:lineOptions="{ dotSize: 8 // default: 4 }"
+:line-options="{ dotSize: 8 // default: 4 }"
 ```
 
 :::demo
@@ -111,7 +117,7 @@ Just like bar width, we can set the dot size on a line graph, with the dotSize p
       { name: 'Dataset 1', values: [18, 40, 30, 35, 8, 52, 17, -4] },
       { name: 'Dataset 2', values: [30, 50, -10, 15, 18, 32, 27, 14] },
     ]"
-    :lineOptions="{
+    :line-options="{
       dotSize: ratio, // default: 4
     }"
   />

@@ -24,7 +24,7 @@
     "docs:serve": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint": "eslint . --ext .js,.vue --ignore-path .gitignore",
-    "format": "prettier --check ."
+    "format": "prettier --write ."
   },
   "prettier": {
     "semi": false

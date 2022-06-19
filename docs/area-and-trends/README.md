@@ -3,7 +3,7 @@
 An area chart is derived from a line chart, by marking the area between the X axis and the line plot. It is usually used to compare the areas under the curve for two or more different plots.
 
 ```vue
-:lineOptions="{ regionFill: 1 // default: 0 }"
+:line-options="{ regionFill: 1 // default: 0 }"
 ```
 
 ::: demo
@@ -16,7 +16,7 @@ An area chart is derived from a line chart, by marking the area between the X ax
     { name: 'Dataset 1', values: [18, 40, 30, 35, 8, 52, 17, -4] },
     { name: 'Dataset 2', values: [30, 50, -10, 15, 18, 32, 27, 14] },
   ]"
-  :lineOptions="{
+  :line-options="{
     regionFill: 1, // default: 0
   }"
 />
@@ -35,7 +35,7 @@ The X axis (often the time axis) is usually continuous. That means we can reduce
 We can skip X labels by setting the `xIsSeries` property in `axisOptions` to `true`.
 
 ```vue
-:axisOptions="{ xIsSeries: true // default: false }"
+:axis-options="{ xIsSeries: true // default: false }"
 ```
 
 This results only some of the X ticks having a label.
@@ -64,7 +64,7 @@ This results only some of the X ticks having a label.
       ],
     },
   ]"
-  :axisOptions="{
+  :axis-options="{
     xIsSeries: true,
   }"
 />
@@ -75,7 +75,7 @@ This results only some of the X ticks having a label.
 The line plot in the above plot could still be simplified. For example, to maintain uniformity, we could opt out of showing the dots at all, with `hideDots`.
 
 ```vue
-:lineOptions="{ hideDots: 1 // default: 0 }"
+:line-options="{ hideDots: 1 // default: 0 }"
 ```
 
 ::: demo
@@ -102,10 +102,10 @@ The line plot in the above plot could still be simplified. For example, to maint
       ],
     },
   ]"
-  :axisOptions="{
+  :axis-options="{
     xIsSeries: true,
   }"
-  :lineOptions="{
+  :line-options="{
     hideDots: 1,
   }"
 />
@@ -116,13 +116,13 @@ The line plot in the above plot could still be simplified. For example, to maint
 Or you could just choose to show only the dots instead.
 
 ```vue
-:lineOptions="{ hideLine: 1 // default: 0 }"
+:line-options="{ hideLine: 1 // default: 0 }"
 ```
 
 A subtle way to show gradation of values is to render a change in color with the magnitude of the values. The property that does this is called `heatline`.
 
 ```vue
-:lineOptions="{ heatline: 1 // default: 0 }"
+:line-options="{ heatline: 1 // default: 0 }"
 ```
 
 ::: demo
@@ -149,10 +149,10 @@ A subtle way to show gradation of values is to render a change in color with the
       ],
     },
   ]"
-  :axisOptions="{
+  :axis-options="{
     xIsSeries: true,
   }"
-  :lineOptions="{
+  :line-options="{
     hideDots: 1,
     heatline: 1,
   }"

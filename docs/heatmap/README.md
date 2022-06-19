@@ -94,7 +94,7 @@ Setting `discreteDomains` to `0` allows for a continous distribution of heat squ
     :height="180"
     :start="new Date('January 01, 2016 00:00:00')"
     :end="new Date('November 01, 2016 00:00:00')"
-    :discreteDomains="0"
+    :discrete-domains="0"
   />
 </template>
 ```

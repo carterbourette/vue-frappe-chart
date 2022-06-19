@@ -32,7 +32,7 @@ All the `lineOptions` and `barOptions` apply to mix and match datasets as well.
 Unlike lines, bars have two ways to show multiple data point values: adjacent or stacked bars. Stacked bar charts are similar to area charts, being useful for comparisions of similar trends. The property stacked in barOptions renders a stacked bar chart instead of the default adjacent bars:
 
 ```vue
-:barOptions="{ stacked: 1 // default 0, i.e. adjacent }"
+:bar-options="{ stacked: 1 // default 0, i.e. adjacent }"
 ```
 
 :::demo
@@ -45,7 +45,7 @@ Unlike lines, bars have two ways to show multiple data point values: adjacent or
     { name: 'Dataset 1', values: [18, 40, 30, 35, 8, 52, 17, -4] },
     { name: 'Dataset 2', values: [30, 50, -10, 15, 18, 32, 27, 14] },
   ]"
-  :barOptions="{
+  :bar-options="{
     stacked: 1, // default 0, i.e. adjacent
   }"
 />
