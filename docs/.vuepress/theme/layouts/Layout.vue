@@ -5,20 +5,11 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    />
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
+    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <template #top>
         <slot name="sidebar-top" />
       </template>
@@ -29,10 +20,7 @@
 
     <Home v-if="$page.frontmatter.home" />
 
-    <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
+    <Page v-else :sidebar-items="sidebarItems">
       <template #top>
         <slot name="page-top" />
       </template>
@@ -44,56 +32,54 @@
 </template>
 
 <script>
-import Home from '@theme/components/Home.vue'
-import Navbar from '@theme/components/Navbar.vue'
-import Page from '@theme/components/Page.vue'
-import Sidebar from '@theme/components/Sidebar.vue'
-import { resolveSidebarItems } from '../util'
+import Home from "@theme/components/Home.vue"
+import Navbar from "@theme/components/Navbar.vue"
+import Page from "@theme/components/Page.vue"
+import Sidebar from "@theme/components/Sidebar.vue"
+import { resolveSidebarItems } from "../util"
 
 export default {
-  name: 'Layout',
+  name: "Layout",
 
   components: {
     Home,
     Page,
     Sidebar,
-    Navbar
+    Navbar,
   },
 
-  data () {
+  data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
     }
   },
 
   computed: {
-    shouldShowNavbar () {
+    shouldShowNavbar() {
       const { themeConfig } = this.$site
       const { frontmatter } = this.$page
-      if (
-        frontmatter.navbar === false
-        || themeConfig.navbar === false) {
+      if (frontmatter.navbar === false || themeConfig.navbar === false) {
         return false
       }
       return (
-        this.$title
-        || themeConfig.logo
-        || themeConfig.repo
-        || themeConfig.nav
-        || this.$themeLocaleConfig.nav
+        this.$title ||
+        themeConfig.logo ||
+        themeConfig.repo ||
+        themeConfig.nav ||
+        this.$themeLocaleConfig.nav
       )
     },
 
-    shouldShowSidebar () {
+    shouldShowSidebar() {
       const { frontmatter } = this.$page
       return (
-        !frontmatter.home
-        && frontmatter.sidebar !== false
-        && this.sidebarItems.length
+        !frontmatter.home &&
+        frontmatter.sidebar !== false &&
+        this.sidebarItems.length
       )
     },
 
-    sidebarItems () {
+    sidebarItems() {
       return resolveSidebarItems(
         this.$page,
         this.$page.regularPath,
@@ -102,40 +88,40 @@ export default {
       )
     },
 
-    pageClasses () {
+    pageClasses() {
       const userPageClass = this.$page.frontmatter.pageClass
       return [
         {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          "no-navbar": !this.shouldShowNavbar,
+          "sidebar-open": this.isSidebarOpen,
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ]
-    }
+    },
   },
 
-  mounted () {
+  mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
   },
 
   methods: {
-    toggleSidebar (to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-      this.$emit('toggle-sidebar', this.isSidebarOpen)
+    toggleSidebar(to) {
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen
+      this.$emit("toggle-sidebar", this.isSidebarOpen)
     },
 
     // side swipe
-    onTouchStart (e) {
+    onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       }
     },
 
-    onTouchEnd (e) {
+    onTouchEnd(e) {
       const dx = e.changedTouches[0].clientX - this.touchStart.x
       const dy = e.changedTouches[0].clientY - this.touchStart.y
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
@@ -145,7 +131,7 @@ export default {
           this.toggleSidebar(false)
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>

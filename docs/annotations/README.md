@@ -7,24 +7,20 @@ Special values (like range points) on a chart can be annotated for quick compari
 To highlight certain values on the Y axis, `yMarkers` can be set. They will shown as dashed lines on the graph.
 
 ```vue
-:yMarkers="[
-    { label: 'Threshold', value: 30, options: { labelPos: 'left' } }
-]"
+:yMarkers="[ { label: 'Threshold', value: 30, options: { labelPos: 'left' } } ]"
 ```
 
-::: demo 
+::: demo
+
 ```vue
 <v-frappe-chart
-    type="line"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :yMarkers="[
-        { label: 'Threshold', value: 30, options: { labelPos: 'left' } }
-    ]"
+  type="line"
+  :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+  :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
+  :yMarkers="[{ label: 'Threshold', value: 30, options: { labelPos: 'left' } }]"
 />
 ```
+
 :::
 
 ### Regions
@@ -32,30 +28,28 @@ To highlight certain values on the Y axis, `yMarkers` can be set. They will show
 2D counterparts to markers, they have a `start` and `end` instead of value:
 
 ```vue
-:yRegions="[{
-    label: 'Optimum Value',
-    start: 10,
-    end: 30,
-    options: { labelPos: 'left' }
-}]"
+:yRegions="[{ label: 'Optimum Value', start: 10, end: 30, options: { labelPos:
+'left' } }]"
 ```
 
-::: demo 
+::: demo
+
 ```vue
 <v-frappe-chart
-    type="line"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :yRegions="[{
-        label: 'Optimum Value',
-        start: 10,
-        end: 30,
-        options: { labelPos: 'left' }
-    }]"
+  type="line"
+  :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+  :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
+  :yRegions="[
+    {
+      label: 'Optimum Value',
+      start: 10,
+      end: 30,
+      options: { labelPos: 'left' },
+    },
+  ]"
 />
 ```
+
 :::
 
 ## Tooltips
@@ -63,45 +57,43 @@ To highlight certain values on the Y axis, `yMarkers` can be set. They will show
 Frappe Charts are known for their awesome tooltips. What's more, they are also customizable for the format of the label and value displayed on them.
 
 ```vue
-:tooltipOptions="{
-    formatTooltipX: d => (d + '').toUpperCase(),
-    formatTooltipY: d => d + ' pts',
-}"
+:tooltipOptions="{ formatTooltipX: d => (d + '').toUpperCase(), formatTooltipY:
+d => d + ' pts', }"
 ```
 
-::: demo 
+::: demo
+
 ```vue
 <v-frappe-chart
-    type="line"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :tooltipOptions="{
-        formatTooltipX: d => (d + '').toUpperCase(),
-        formatTooltipY: d => d + ' pts',
-    }"
+  type="line"
+  :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+  :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
+  :tooltipOptions="{
+    formatTooltipX: (d) => (d + '').toUpperCase(),
+    formatTooltipY: (d) => d + ' pts',
+  }"
 />
 ```
+
 :::
 
 For a non-web or static interface, where tooltips are absent, `valuesOverPoints` is a useful tweak to show value information at a glance.
 
-::: demo 
+::: demo
+
 ```vue
 <v-frappe-chart
-    valuesOverPoints
-    type="line"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :tooltipOptions="{
-        formatTooltipX: d => (d + '').toUpperCase(),
-        formatTooltipY: d => d + ' pts',
-    }"
+  valuesOverPoints
+  type="line"
+  :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+  :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
+  :tooltipOptions="{
+    formatTooltipX: (d) => (d + '').toUpperCase(),
+    formatTooltipY: (d) => d + ' pts',
+  }"
 />
 ```
+
 :::
 
 Next up we'll look at perhaps one the more exciting parts in axis charts: **Mixed Charts**.

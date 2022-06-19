@@ -1,41 +1,38 @@
 <template>
-  <div
-    class="theme-code-block"
-    :class="{ 'theme-code-block__active': active }"
-  >
+  <div class="theme-code-block" :class="{ 'theme-code-block__active': active }">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CodeBlock',
+  name: "CodeBlock",
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     active: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  mounted () {
+  mounted() {
     if (this.$parent && this.$parent.loadTabs) {
       this.$parent.loadTabs()
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
-  .theme-code-block {
-    display: none;
-  }
-  .theme-code-block__active {
-    display: block;
-  }
-  .theme-code-block > pre {
-    background-color: orange;
-  }
+.theme-code-block {
+  display: none;
+}
+.theme-code-block__active {
+  display: block;
+}
+.theme-code-block > pre {
+  background-color: orange;
+}
 </style>

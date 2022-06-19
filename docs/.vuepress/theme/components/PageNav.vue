@@ -1,13 +1,7 @@
 <template>
-  <div
-    v-if="prev || next"
-    class="page-nav"
-  >
+  <div v-if="prev || next" class="page-nav">
     <p class="inner">
-      <span
-        v-if="prev"
-        class="prev"
-      >
+      <span v-if="prev" class="prev">
         ←
         <a
           v-if="prev.type === 'external'"
@@ -21,19 +15,12 @@
           <OutboundLink />
         </a>
 
-        <RouterLink
-          v-else
-          class="prev"
-          :to="prev.path"
-        >
+        <RouterLink v-else class="prev" :to="prev.path">
           {{ prev.title || prev.path }}
         </RouterLink>
       </span>
 
-      <span
-        v-if="next"
-        class="next"
-      >
+      <span v-if="next" class="next">
         <a
           v-if="next.type === 'external'"
           :href="next.path"
@@ -45,10 +32,7 @@
           <OutboundLink />
         </a>
 
-        <RouterLink
-          v-else
-          :to="next.path"
-        >
+        <RouterLink v-else :to="next.path">
           {{ next.title || next.path }}
         </RouterLink>
         →
@@ -58,31 +42,31 @@
 </template>
 
 <script>
-import { resolvePage } from '../util'
-import isString from 'lodash/isString'
-import isNil from 'lodash/isNil'
+import { resolvePage } from "../util"
+import isString from "lodash/isString"
+import isNil from "lodash/isNil"
 
 export default {
-  name: 'PageNav',
+  name: "PageNav",
 
-  props: ['sidebarItems'],
+  props: ["sidebarItems"],
 
   computed: {
-    prev () {
+    prev() {
       return resolvePageLink(LINK_TYPES.PREV, this)
     },
 
-    next () {
+    next() {
       return resolvePageLink(LINK_TYPES.NEXT, this)
-    }
-  }
+    },
+  },
 }
 
-function resolvePrev (page, items) {
+function resolvePrev(page, items) {
   return find(page, items, -1)
 }
 
-function resolveNext (page, items) {
+function resolveNext(page, items) {
   return find(page, items, 1)
 }
 
@@ -90,16 +74,16 @@ const LINK_TYPES = {
   NEXT: {
     resolveLink: resolveNext,
     getThemeLinkConfig: ({ nextLinks }) => nextLinks,
-    getPageLinkConfig: ({ frontmatter }) => frontmatter.next
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.next,
   },
   PREV: {
     resolveLink: resolvePrev,
     getThemeLinkConfig: ({ prevLinks }) => prevLinks,
-    getPageLinkConfig: ({ frontmatter }) => frontmatter.prev
-  }
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.prev,
+  },
 }
 
-function resolvePageLink (
+function resolvePageLink(
   linkType,
   { $themeConfig, $page, $route, $site, sidebarItems }
 ) {
@@ -123,20 +107,20 @@ function resolvePageLink (
   }
 }
 
-function find (page, items, offset) {
+function find(page, items, offset) {
   const res = []
   flatten(items, res)
   for (let i = 0; i < res.length; i++) {
     const cur = res[i]
-    if (cur.type === 'page' && cur.path === decodeURIComponent(page.path)) {
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
       return res[i + offset]
     }
   }
 }
 
-function flatten (items, res) {
+function flatten(items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === 'group') {
+    if (items[i].type === "group") {
       flatten(items[i].children || [], res)
     } else {
       res.push(items[i])

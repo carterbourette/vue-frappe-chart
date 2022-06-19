@@ -6,50 +6,53 @@ In this case, our chart has four parts,
 
 ```vue
 <v-frappe-chart
-    type="heatmap"
-    :data="{
-        '1461744959': 20,
-        '1463673055': 113,
-        '1476892421': 57,
-    }"
-    :start="startDate"
-    :end="endDate"
+  type="heatmap"
+  :data="{
+    '1461744959': 20,
+    '1463673055': 113,
+    '1476892421': 57,
+  }"
+  :start="startDate"
+  :end="endDate"
 />
 ```
 
 :::demo
+
 ```vue
 <v-frappe-chart
-    title="Monthly Distribution"
-    type="heatmap"
-    :height="180"
-    :data="{
-        '1461744959': 20,
-        '1463673055': 113,
-        '1476892421': 57
-    }"
-    :start="new Date('January 01, 2016 00:00:00')"
-    :end="new Date('September 01, 2016 00:00:00')"
+  title="Monthly Distribution"
+  type="heatmap"
+  :height="180"
+  :data="{
+    '1461744959': 20,
+    '1463673055': 113,
+    '1476892421': 57,
+  }"
+  :start="new Date('January 01, 2016 00:00:00')"
+  :end="new Date('September 01, 2016 00:00:00')"
 />
 ```
+
 :::
 
 If you wish you can configure the radius of heat squares using,
 
 ```vue
-:radius="2"  // default 0
+:radius="2" // default 0
 ```
 
 :::demo
+
 ```vue
 <template>
   <v-frappe-chart
     title="Monthly Distribution"
     type="heatmap"
     :data="{
-        '1461744959': 20,
-        '1463673055': 113,
-        '1476892421': 57
+      '1461744959': 20,
+      '1463673055': 113,
+      '1476892421': 57,
     }"
     :height="180"
     :radius="radius"
@@ -57,34 +60,35 @@ If you wish you can configure the radius of heat squares using,
     :end="new Date('September 01, 2016 00:00:00')"
   />
   <input type="range" v-model="radius" step="1" min="1" max="6" />
-  <br>
-  {{radius}} radius
+  <br />
+  {{ radius }} radius
 </template>
 <script>
 export default {
   data() {
     return {
-      radius: 6
+      radius: 6,
     }
-  }
+  },
 }
 </script>
 ```
-:::
 
+:::
 
 Setting `discreteDomains` to `0` allows for a continous distribution of heat squares (as on GitHub), rather than showing the month-wise separation. A different set of colors can also be specified.
 
 :::demo
+
 ```vue
 <template>
   <v-frappe-chart
     title="Monthly Distribution"
     type="heatmap"
     :data="{
-        '1461744959': 20,
-        '1463673055': 113,
-        '1476892421': 57
+      '1461744959': 20,
+      '1463673055': 113,
+      '1476892421': 57,
     }"
     :colors="['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e']"
     :height="180"
@@ -94,4 +98,5 @@ Setting `discreteDomains` to `0` allows for a continous distribution of heat squ
   />
 </template>
 ```
+
 :::

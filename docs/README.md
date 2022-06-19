@@ -24,8 +24,8 @@ npm install vue-frappe-chart
 Globally import / initialize:
 
 ```js
-import Vue from 'vue'
-import Chart from 'vue-frappe-chart'
+import Vue from "vue"
+import Chart from "vue-frappe-chart"
 
 Vue.use(Chart)
 ```
@@ -33,12 +33,12 @@ Vue.use(Chart)
 or use the component directly:
 
 ```js
-import { VFrappeChart } from 'vue-frappe-chart'
+import { VFrappeChart } from "vue-frappe-chart"
 
 export default {
   components: {
-    VFrappeChart
-  }
+    VFrappeChart,
+  },
 }
 ```
 
@@ -46,17 +46,16 @@ In our template:
 
 ```vue
 <v-frappe-chart
-    type="bar"
-    :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-    :data="[
-        { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]"
-    :colors="['red']"
+  type="bar"
+  :labels="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+  :data="[{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]"
+  :colors="['red']"
 />
 ```
 
 ## Resources
-* [NPM vue-frappe-chart](https://www.npmjs.com/package/vue-frappe-chart)
-* [vue-frappe-chart Documentation](https://carterbourette.ca/vue-frappe-chart/)
-* [Frappe Charts](https://frappe.io/charts)
-* [Vuejs](https://vuejs.org)
+
+- [NPM vue-frappe-chart](https://www.npmjs.com/package/vue-frappe-chart)
+- [vue-frappe-chart Documentation](https://carterbourette.ca/vue-frappe-chart/)
+- [Frappe Charts](https://frappe.io/charts)
+- [Vuejs](https://vuejs.org)

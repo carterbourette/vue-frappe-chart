@@ -12,11 +12,21 @@
     "frappe-charts": "1.6.1"
   },
   "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "prettier": "^2.7.1",
     "vuepress": "^1.8.2",
     "vuepress-plugin-demo-container": "^0.2.0"
   },
   "scripts": {
     "docs:serve": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "lint": "eslint . --ext .js,.vue --ignore-path .gitignore",
+    "format": "prettier --check ."
+  },
+  "prettier": {
+    "semi": false
   }
 }

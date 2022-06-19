@@ -4,24 +4,21 @@
 
     <slot name="top" />
 
-    <SidebarLinks
-      :depth="0"
-      :items="items"
-    />
+    <SidebarLinks :depth="0" :items="items" />
     <slot name="bottom" />
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
+import SidebarLinks from "@theme/components/SidebarLinks.vue"
+import NavLinks from "@theme/components/NavLinks.vue"
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
   components: { SidebarLinks, NavLinks },
 
-  props: ['items']
+  props: ["items"],
 }
 </script>
 
