@@ -13,6 +13,8 @@
 
 This is a simple vue wrapper for the [frappe/charts](https://github.com/frappe/charts) package.
 
+Supports Vue.js version 2 and 3.
+
 ## Getting Started
 
 Install via `npm`:
